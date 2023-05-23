@@ -41,7 +41,7 @@ local Library = {
     HudRegistry = {};
 
     FontColor = Color3.fromRGB(255, 255, 255);
-    MainColor = Color3.fromRGB(200,200, 200);
+    MainColor = Color3.fromRGB(254,12,100)  ;
     BackgroundColor = Color3.fromRGB(20, 20, 20);
     AccentColor = Color3.fromRGB(0, 85, 255);
     OutlineColor = Color3.fromRGB(50, 50, 50);
@@ -1570,6 +1570,7 @@ do
                 BorderColor3 = Color3.new(0, 0, 0);
                 Size = UDim2.new(1, -4, 0, 15);
                 ZIndex = 5;
+                BackgroundTransparency = 1 ;
                 BorderSizePixel = 0  ;
             });
 
@@ -1579,7 +1580,7 @@ do
             })
 
             local Inner = Library:Create('Frame', {
-                BackgroundColor3 = Color3.fromRGB(254,242,0);
+                BackgroundColor3 =  Color3.fromRGB(254,12,100)  ;
                 BorderColor3 = Library.OutlineColor;
                 BorderMode = Enum.BorderMode.Inset;
                 Size = UDim2.new(1, 0, 1, 0);
@@ -1602,7 +1603,7 @@ do
             });
 
             Label.TextStrokeTransparency =1 ;
-            Label.TextColor3 = Color3.fromRGB(0,0,0)
+            Label.TextColor3 = Color3.fromRGB(255,255,255)
 
             Library:Create('UIGradient', {
                 Color = ColorSequence.new({
@@ -1821,7 +1822,7 @@ do
         });
 
         local TextBoxInner = Library:Create('Frame', {
-            BackgroundColor3 =Color3.fromRGB(242,146,26);
+            BackgroundColor3 = Color3.fromRGB(254,12,100)  ;
             -- BorderColor3 = Library.OutlineColor;
             -- BorderMode = Enum.BorderMode.Inset;
             Size = UDim2.new(1, 0, 1, 0);
@@ -2075,7 +2076,7 @@ do
             if not Toggle.Value then 
                 a =  Color3.fromRGB(255,255,255)
             else
-                a = Color3.fromRGB(254,242,0)
+                a =  Color3.fromRGB(254,12,100)  
             end
             
             Library:Tween({
@@ -2195,7 +2196,7 @@ do
         });
 
         local SliderInner = Library:Create('Frame', {
-            BackgroundColor3 = Color3.fromRGB(255,255,255);
+            BackgroundColor3 = Color3.fromRGB(35,35,35);
             -- BorderColor3 = Library.OutlineColor;
             -- BorderMode = Enum.BorderMode.Inset;
             Size = UDim2.new(1, 0, 1, 0);
@@ -2220,7 +2221,7 @@ do
         });
 
         local Fill = Library:Create('Frame', {
-            BackgroundColor3 =  Color3.fromRGB(0,110,185);
+            BackgroundColor3 =   Color3.fromRGB(254,12,100)  ;
             -- BorderColor3 = Library.AccentColorDark;
             Size = UDim2.new(0, 0, 1, 0);
             ZIndex = 7;
@@ -2267,6 +2268,7 @@ do
             ZIndex = 9;
             BorderSizePixel = 0 ;
             Parent = SliderInner;
+            TextStrokeTransparency = 1 ;
         });
 
         Library:OnHighlight(SliderOuter, SliderOuter,
@@ -2666,7 +2668,7 @@ do
                 Count = Count + 1;
 
                 local Button = Library:Create('Frame', {
-                    BackgroundColor3 = Color3.fromRGB(0,110,185) ;
+                    BackgroundColor3 =  Color3.fromRGB(35,35,35)   ;
                     -- BorderColor3 = Library.OutlineColor;
                     -- BorderMode = Enum.BorderMode.Middle;
                     Size = UDim2.new(1, 0, 0, 20);
@@ -3352,13 +3354,13 @@ function Library:CreateWindow(...)
         Position = UDim2.new(0,0,0,-3) ;
         ZIndex = 5;
         BackgroundTransparency = 1 ,
-        Image = 'rbxassetid://12999608261';
+        Image = 'http://www.roblox.com/asset/?id=13163199831';
         -- Visible = not not Info.Transparency;
         Parent = Outer;
     })
 
     local Inner = Library:Create('Frame', {
-        BackgroundColor3 = Library.MainColor;
+        BackgroundColor3 =  Color3.fromRGB(25,25,25)  ;
         BorderColor3 = Library.AccentColor;
         BorderMode = Enum.BorderMode.Inset;
         Position = UDim2.new(0, 1, 0, 1);
@@ -3389,7 +3391,7 @@ function Library:CreateWindow(...)
     });
 
     WindowLabel.TextStrokeTransparency = 1
-    WindowLabel.TextColor3 = Color3.fromRGB(15,15,15)
+    WindowLabel.TextColor3 = Color3.fromRGB(255,255,255)
 
 
     local MainSectionOuter = Library:Create('Frame', {
@@ -3567,7 +3569,7 @@ function Library:CreateWindow(...)
 
         for _, Side in next, { LeftSide, RightSide } do
             Side:WaitForChild('UIListLayout'):GetPropertyChangedSignal('AbsoluteContentSize'):Connect(function()
-                Side.CanvasSize = UDim2.fromOffset(0, Side.UIListLayout.AbsoluteContentSize.Y);
+                Side.CanvasSize = UDim2.fromOffset(0, Side.UIListLayout.AbsoluteContentSize.Y + 30);
             end);
         end;
 
@@ -3580,7 +3582,7 @@ function Library:CreateWindow(...)
                 {
                     object =  TabButtonLabel,
                     property = {
-                        TextColor3 = Color3.fromRGB(15,15,15)
+                        TextColor3 = Color3.fromRGB(255,255,255)
                     },              
                 },
                 {
@@ -3662,6 +3664,7 @@ function Library:CreateWindow(...)
                 Size = UDim2.new(1, -2, 1, -2);
                 Position = UDim2.new(0, 1, 0, 1);
                 ZIndex = 4;
+                BorderSizePixel = 0 ;
                 Parent = BoxOuter;
             });
 
@@ -3694,6 +3697,7 @@ function Library:CreateWindow(...)
                 Text = Info.Name;
                 TextXAlignment = Enum.TextXAlignment.Center;
                 ZIndex = 5;
+                TextStrokeTransparency = 1 ;
                 Parent = BoxInner;
             });
 
@@ -3850,7 +3854,7 @@ function Library:CreateWindow(...)
                 });
 
                 ButtonLabel.TextStrokeTransparency = 1 ;
-                ButtonLabel.TextColor3 = Color3.fromRGB(25,25,25)
+                ButtonLabel.TextColor3 = Color3.fromRGB(255,255,255)
 
                 Library:AddToRegistry(Block, {
                     BackgroundColor3 = 'BackgroundColor';
@@ -3915,7 +3919,7 @@ function Library:CreateWindow(...)
                         {
                             object = ButtonLabel,
                             property = {
-                                TextColor3 = Color3.fromRGB(25,25,25);
+                                TextColor3 = Color3.fromRGB(255,255,255);
                             },              
                         },
                     },0.3,Enum.EasingStyle.Quad)
@@ -4075,7 +4079,6 @@ Players.PlayerRemoving:Connect(OnPlayerChange);
 getgenv().Library = Library
 return Library
 
-
 -- -- [[ UI ]]
 
 -- -- New example script written by wally
@@ -4111,6 +4114,136 @@ return Library
 -- -- -- except Tabboxes you have to call the functions on a tab (Tabbox:AddTab(name))
 -- local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
 
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
+
+-- LeftGroupBox:AddToggle('MyToggle', {
+--     Text = 'This is a toggle',
+--     Default = true, -- Default value (true / false)
+--     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
+
+--     Callback = function(Value)
+--         print('[cb] MyToggle changed to:', Value)
+--     end
+-- })
 
 -- LeftGroupBox:AddToggle('MyToggle', {
 --     Text = 'This is a toggle',
