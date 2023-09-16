@@ -2865,6 +2865,8 @@ do
 
             Library:SafeCallback(Dropdown.Callback, Dropdown.Value);
             Library:SafeCallback(Dropdown.Changed, Dropdown.Value);
+
+		return Dropdown ;
         end;
 
         function Dropdown:Clear() 
